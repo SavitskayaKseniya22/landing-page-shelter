@@ -1,0 +1,83 @@
+@use "@/shared/styles/variables" as *;
+@use "@/shared/styles/breakpoints" as breakpoints;
+
+.help__item-label {
+  font-family: $emphasis-font-family;
+  font-size: 20px;
+  line-height: 115%;
+  color: $titles-color;
+  letter-spacing: 1.2px;
+
+  @media (width <= breakpoints.$tablet-max) {
+    font-size: 15px;
+    line-height: 110%;
+  }
+}
+
+.help {
+  display: block;
+}
+
+.help__container {
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 40px 100px;
+
+  @media (width <= breakpoints.$laptop-max) {
+    padding: 80px 69px 100px;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 42px;
+    padding: 42px 15px;
+  }
+
+  .help__heading {
+    text-align: center;
+  }
+}
+
+.help__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 55px 120px;
+  justify-content: center;
+
+  @media (width <= breakpoints.$laptop-max) {
+    column-gap: 60px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 30px 0;
+  }
+}
+
+.help__item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+
+  @media (width <= breakpoints.$laptop-max) {
+    min-width: calc(30% - 20px);
+    max-width: 30%;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 20px;
+    min-width: calc(50% - 15px);
+    max-width: 50%;
+  }
+
+  .help__icon {
+    width: 60px;
+    aspect-ratio: 1/1;
+
+    @media (width <= breakpoints.$tablet-max) {
+      width: 40%;
+    }
+  }
+}

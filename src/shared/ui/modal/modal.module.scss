@@ -1,0 +1,61 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+@use "@/shared/styles/variables" as *;
+
+.pet-modal {
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  padding: 72px 0;
+  margin: 0;
+  overflow-y: auto;
+  background: transparent;
+  border: 0;
+
+  &[open] {
+    display: flex;
+  }
+
+  &::backdrop {
+    background-color: $transparent-back-color;
+  }
+}
+
+.pet-modal__content {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 70.3%;
+  max-width: 900px;
+  padding: 0;
+  margin: auto;
+  border: none;
+  border-radius: 9px;
+
+  @media (width <= breakpoints.$laptop-max) {
+    width: 82%;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    width: 75%;
+  }
+
+  .pet-modal__close {
+    position: absolute;
+    top: -52px;
+    right: -37px;
+
+    @media (width <= breakpoints.$laptop-max) {
+      top: -52px;
+      right: -45px;
+    }
+
+    @media (width <= breakpoints.$tablet-max) {
+      right: -26px;
+    }
+  }
+}

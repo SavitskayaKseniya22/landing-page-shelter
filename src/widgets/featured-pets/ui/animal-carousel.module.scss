@@ -1,0 +1,110 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+@use "@/shared/styles/variables" as *;
+
+.pet-carousel {
+  display: flex;
+  gap: 53px;
+  align-items: center;
+  justify-content: center;
+  min-height: 435px;
+
+  @media (width <= breakpoints.$laptop-max) {
+    gap: 12px;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    flex-wrap: wrap;
+    gap: 20px 80px;
+    justify-content: center;
+  }
+
+  .pet-carousel__control {
+    flex-shrink: 0;
+
+    &--previous {
+      order: 1;
+    }
+
+    &--next {
+      order: 3;
+    }
+
+    @media (width <= breakpoints.$tablet-max) {
+      &--previous {
+        order: 2;
+      }
+    }
+  }
+}
+
+.pet-carousel__viewport {
+  display: flex;
+  gap: 90px;
+  align-items: center;
+  justify-content: center;
+  order: 2;
+  width: 990px;
+  overflow: hidden;
+
+  @media (width <= breakpoints.$laptop-max) {
+    gap: 40px;
+    width: 580px;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 20px;
+    order: 1;
+    width: 270px;
+  }
+
+  .pet-carousel__slide {
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    justify-content: center;
+
+    &.pet-carousel__slide--moving-left {
+      transform: translateX(1080px);
+      transition: transform 1s;
+    }
+
+    &.pet-carousel__slide--moving-right {
+      transform: translateX(-1080px);
+      transition: transform 1s;
+    }
+
+    > :not(:nth-child(-n + 3)) {
+      display: none;
+    }
+
+    @media (width <= breakpoints.$laptop-max) {
+      gap: 40px;
+
+      &.pet-carousel__slide--moving-left {
+        transform: translateX(620px);
+      }
+
+      &.pet-carousel__slide--moving-right {
+        transform: translateX(-620px);
+      }
+
+      > :not(:nth-child(-n + 2)) {
+        display: none;
+      }
+    }
+
+    @media (width <= breakpoints.$tablet-max) {
+      &.pet-carousel__slide--moving-left {
+        transform: translateX(290px);
+      }
+
+      &.pet-carousel__slide--moving-right {
+        transform: translateX(-290px);
+      }
+
+      > :not(:nth-child(-n + 1)) {
+        display: none;
+      }
+    }
+  }
+}

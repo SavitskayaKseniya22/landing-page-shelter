@@ -1,0 +1,108 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+@use "@/shared/styles/variables" as *;
+
+.site-header {
+  &.site-header--transparent {
+    background-color: transparent;
+  }
+
+  &.site-header--solid {
+    background-color: white;
+  }
+}
+
+.site-header__container {
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 40px;
+
+  @media (width <= breakpoints.$laptop-max) {
+    padding: 30px;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    padding: 30px 20px;
+  }
+}
+
+.main-nav__list {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.menu-toggle,
+.site-header__backdrop {
+  display: none;
+}
+
+@media (width <= breakpoints.$tablet-max) {
+  .main-nav {
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 21;
+    display: flex;
+    visibility: hidden;
+    width: 0;
+    height: 100dvh;
+    overflow: hidden;
+    background: $action-color;
+    opacity: 0;
+    transition:
+      width 1s,
+      opacity 1s,
+      visibility 0s 1s;
+
+    &.main-nav--open {
+      visibility: visible;
+      width: min(320px, 100%);
+      overflow-y: auto;
+      opacity: 1;
+      transition-delay: 0s;
+
+      .menu-toggle--close {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .main-nav__list {
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    width: 32px;
+    height: 22px;
+    cursor: pointer;
+    background: linear-gradient(#f1cdb3 10%, transparent 10% 45%, #f1cdb3 45% 55%, transparent 55% 90%, #f1cdb3 90%);
+    border: 0;
+    transform: rotate(0);
+    transition: transform 2s;
+
+    &--expanded {
+      transform: rotate(90deg);
+    }
+  }
+
+  .menu-toggle--close {
+    position: absolute;
+    top: 45px;
+    right: 20px;
+  }
+
+  .site-header__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    background: $transparent-back-color;
+    border: 0;
+  }
+}

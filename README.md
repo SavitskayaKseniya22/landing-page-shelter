@@ -1,6 +1,6 @@
 # [Shelter](https://shelter-lemon.vercel.app/)
 
-Pet shelter landing page.
+Pet shelter landing page. Project structure follows Feature-Sliced Design (FSD).
 
 ## Features
 
@@ -13,16 +13,18 @@ Pet shelter landing page.
 ## Tech Stack
 
 - React
-- Next
-- Typescript
+- Vite
+- React Router
+- TypeScript
 - Sass
 - Prettier
-- Eslint
-- Normalize.css
-- Heroicons
+- ESLint
+- Stylelint
 - Vercel
 
 ## How to use
+
+Requires Node.js 24.15+ (24.x) or 26+ and npm 11+.
 
 1. Clone the repo
 
@@ -39,7 +41,7 @@ cd shelter
 3. Install dependencies
 
 ```bash
-npm install
+npm ci
 ```
 
 4. Start the dev server
@@ -48,11 +50,10 @@ npm install
 npm run dev
 ```
 
+Open http://localhost:5173.
+
+Run `npm run check` to check formatting, code, styles and the build. Use `npm run build` to build the site into `dist/` and `npm run preview` to preview it locally.
+
 ### Screenshots:
 
 ![изображение](https://raw.githubusercontent.com/SavitskayaKseniya22/projects-photos/main/photos/shelter/New%20folder/shelter-1920px.png)
-
-
-
-
-

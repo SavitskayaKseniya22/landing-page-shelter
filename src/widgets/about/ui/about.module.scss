@@ -1,0 +1,59 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+
+.about {
+  display: block;
+}
+
+.about__container {
+  display: flex;
+  gap: 120px;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 175px 100px;
+
+  @media (width <= breakpoints.$laptop-max) {
+    flex-direction: column;
+    gap: 80px;
+    padding: 80px 165px 100px;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 42px;
+    padding: 42px 25px;
+  }
+}
+
+.about__pet-image {
+  width: 300px;
+  height: 408px;
+
+  @media (width <= breakpoints.$tablet-max) {
+    width: 260px;
+    height: 353px;
+  }
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  max-width: 430px;
+  text-align: justify;
+
+  @media (width <= breakpoints.$laptop-max) {
+    order: -1;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 22px;
+  }
+
+  .about__heading {
+    align-self: flex-start;
+
+    @media (width <= breakpoints.$tablet-max) {
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+
+.account-copy {
+  display: block;
+}
+
+.account-copy__button {
+  gap: 15px;
+  width: 350px;
+  font-size: 20px;
+  line-height: 115%;
+  white-space: nowrap;
+  border-radius: 9px;
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    width: 100%;
+    font-size: 15px;
+    line-height: 110%;
+  }
+
+  .account-copy__number {
+    flex-grow: 22;
+  }
+}

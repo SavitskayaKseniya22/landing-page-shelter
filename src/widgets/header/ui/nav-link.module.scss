@@ -1,0 +1,67 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+@use "@/shared/styles/variables" as *;
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  font-family: $main-font-family;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  color: $addition-light-color;
+  letter-spacing: 0;
+
+  &.nav-link--light {
+    color: $addition-light-color;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &.nav-link--dark {
+    color: $titles-color;
+
+    &:hover {
+      color: $action-color;
+    }
+  }
+
+  &.nav-link--active {
+    &::after {
+      position: absolute;
+      bottom: -3px;
+      width: 100%;
+      height: 3px;
+      content: "";
+      background-color: $emphasis-color;
+    }
+
+    &.nav-link--dark {
+      color: $titles-color;
+    }
+
+    &.nav-link--light {
+      color: white;
+    }
+  }
+}
+
+@media (width <= breakpoints.$tablet-max) {
+  .nav-link {
+    font-size: 32px;
+  }
+
+  .nav-link.nav-link--dark,
+  .nav-link.nav-link--active.nav-link--dark {
+    color: $addition-light-color;
+
+    &:hover {
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use "@/shared/styles/variables" as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $emphasis-font-family;
+  font-size: 17px;
+  font-style: $main-font-style;
+  font-weight: $main-font-weight;
+  line-height: 130%;
+  color: black;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  transition: 0.5s;
+
+  &.button--text {
+    padding: 15px 45px;
+  }
+
+  &.button--icon {
+    width: 52px;
+    height: 52px;
+    padding: 15px;
+
+    &:disabled {
+      pointer-events: none;
+      border: 2px solid $addition-light-color;
+
+      img {
+        filter: grayscale(100%) opacity(50%);
+      }
+    }
+  }
+
+  &.button--filled {
+    background-color: $emphasis-color;
+
+    &:hover {
+      background: $emphasis-hover-color;
+    }
+  }
+
+  &.button--outline {
+    background-color: transparent;
+    border: 2px solid $emphasis-color;
+
+    &:hover {
+      background: $emphasis-hover-color;
+      border: 2px solid $emphasis-hover-color;
+    }
+  }
+}

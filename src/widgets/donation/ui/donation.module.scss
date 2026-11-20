@@ -1,0 +1,63 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+@use "@/shared/styles/variables" as *;
+
+.donation__account-caption {
+  font-family: $emphasis-font-family;
+  line-height: 110%;
+  color: $titles-color;
+  letter-spacing: 0.9px;
+}
+
+.donation {
+  background: $background-color;
+}
+
+.donation__container {
+  gap: 30px;
+  align-items: center;
+  padding: 80px 180px 100px;
+
+  @media (width <= breakpoints.$laptop-max) {
+    flex-direction: column;
+    padding: 80px 132px 100px 80px;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    padding: 42px 20px;
+  }
+}
+
+.donation__pet-image {
+  width: 505px;
+  height: 261px;
+
+  @media (width <= breakpoints.$tablet-max) {
+    width: 260px;
+    height: 135px;
+  }
+}
+
+.donation__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: 380px;
+
+  @media (width <= breakpoints.$laptop-max) {
+    order: -1;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 23px;
+    width: 100%;
+  }
+
+  .donation__disclaimer {
+    font-size: 12px;
+    font-style: italic;
+    line-height: 150%;
+    color: $addition-dark-color;
+    text-align: justify;
+  }
+}

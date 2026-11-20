@@ -1,0 +1,27 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+
+.pets-page {
+  background: #f6f6f6;
+}
+
+.pets-page__container {
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 1343px;
+  padding: 80px 0 100px;
+  text-align: center;
+
+  @media (width <= breakpoints.$laptop-max) {
+    gap: 30px;
+    min-height: 1733px;
+    padding: 80px 0 75px;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 42px;
+    min-height: 1649px;
+    padding: 42px 0;
+  }
+}

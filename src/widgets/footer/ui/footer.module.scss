@@ -1,0 +1,66 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+@use "@/shared/styles/variables" as *;
+
+.site-footer {
+  position: relative;
+}
+
+.site-footer__container {
+  position: relative;
+  gap: 160px;
+  padding: 56px 500px 60px 40px;
+
+  @media (width <= breakpoints.$laptop-max) {
+    gap: 60px;
+    padding: 30px 30px 375px;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 10px 309px;
+  }
+}
+
+.site-footer__contacts,
+.site-footer__locations {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 300px;
+  height: 234px;
+
+  @media (width <= breakpoints.$tablet-max) {
+    align-items: center;
+    height: 215px;
+  }
+
+  .site-footer__heading {
+    color: white;
+  }
+}
+
+.site-footer__pet-image {
+  @media (width <= breakpoints.$laptop-max) {
+    right: 234px !important;
+  }
+
+  @media (width <= breakpoints.$tablet-max) {
+    right: 30px !important;
+    width: 260px !important;
+    height: 269px !important;
+  }
+}
+
+.site-footer__link {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 32px;
+  font-size: 20px;
+  line-height: 115%;
+  color: $emphasis-color;
+}

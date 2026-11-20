@@ -1,0 +1,38 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+
+.pet-pagination {
+  display: contents;
+}
+
+.pet-pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 40px;
+  align-items: center;
+  justify-content: center;
+
+  @media (width <= breakpoints.$laptop-max) {
+    row-gap: 30px;
+    padding: unset;
+  }
+}
+
+.pet-pagination__controls {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+
+  @media (width <= breakpoints.$tablet-max) {
+    gap: 10px;
+  }
+
+  svg {
+    height: 23px;
+  }
+}
+
+.pet-pagination__current-page {
+  cursor: default;
+}

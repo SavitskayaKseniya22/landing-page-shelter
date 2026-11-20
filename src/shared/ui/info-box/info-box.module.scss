@@ -1,0 +1,21 @@
+@use "@/shared/styles/breakpoints" as breakpoints;
+@use "@/shared/styles/variables" as *;
+
+.info-box__message {
+  font-family: $emphasis-font-family;
+  font-size: 20px;
+  line-height: 115%;
+  color: $titles-color;
+  letter-spacing: 1.2px;
+
+  @media (width <= breakpoints.$tablet-max) {
+    font-size: 15px;
+    line-height: 110%;
+  }
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
