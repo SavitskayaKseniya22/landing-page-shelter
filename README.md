@@ -1,4 +1,4 @@
-# [Shelter](https://shelter-lemon.vercel.app/)
+# [Shelter]([https://shelter-lemon.vercel.app/](https://landing-page-shelter.netlify.app/))
 
 Pet shelter landing page. Project structure follows Feature-Sliced Design (FSD).
 
@@ -56,4 +56,5 @@ Run `npm run check` to check formatting, code, styles and the build. Use `npm ru
 
 ### Screenshots:
 
-![изображение](https://raw.githubusercontent.com/SavitskayaKseniya22/projects-photos/main/photos/shelter/New%20folder/shelter-1920px.png)
+<img width="1920" height="3809" alt="Screenshot 2026-11-20 at 21-42-07 Shelter" src="https://github.com/user-attachments/assets/75a264e4-bd47-4332-885c-eb139e60bf11" />
+
