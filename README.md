@@ -1,10 +1,10 @@
-# [Shelter]([https://shelter-lemon.vercel.app/](https://landing-page-shelter.netlify.app/))
+# [Shelter](https://landing-page-shelter.netlify.app/)
 
 Pet shelter landing page. Project structure follows Feature-Sliced Design (FSD).
 
 ## Features
 
-- Animals carousel
+- Carousel
 - Modals
 - Burger menu
 - Pagination
@@ -20,7 +20,6 @@ Pet shelter landing page. Project structure follows Feature-Sliced Design (FSD).
 - Prettier
 - ESLint
 - Stylelint
-- Vercel
 
 ## How to use
 
